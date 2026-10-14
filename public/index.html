@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semáforo ESP32 — Status en vivo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="stage">
+    <!-- Conjunto semáforo + poste (como en Figma) -->
+    <div class="pole-wrap">
+      <div class="housing" aria-label="Semáforo">
+        <div id="lightRojo" class="lamp red on"></div>
+        <div id="lightAmarillo" class="lamp yellow"></div>
+        <div id="lightVerde" class="lamp green"></div>
+      </div>
+      <div class="pole"></div>
+    </div>
+
+    <!-- Píldora Status (como en Figma) + lectura en vivo -->
+    <div class="side">
+      <div id="statusPill" class="pill">Status</div>
+      <div class="live">
+        <p id="stateName" class="state">ROJO</p>
+        <p class="count"><span id="seconds">20</span> s <span class="muted">para el cambio</span></p>
+        <div class="progress"><div id="bar" class="bar"></div></div>
+        <p id="connLine" class="conn">● SIMULADO — esperando ESP32…</p>
+        <ul class="meta">
+          <li>Rojo · pin <b>2</b> · <b>20 s</b></li>
+          <li>Amarillo · pin <b>4</b> · <b>5 s</b></li>
+          <li>Verde · pin <b>5</b> · <b>15 s</b></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
